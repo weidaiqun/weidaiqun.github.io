@@ -3,11 +3,11 @@
   <title>魏代群的博客</title>
   
   
-  <link href="https://github.com/weidaiqun/atom.xml" rel="self"/>
+  <link href="https://weidaiqun.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/weidaiqun/"/>
+  <link href="https://weidaiqun.github.io/"/>
   <updated>2021-03-04T03:56:51.217Z</updated>
-  <id>https://github.com/weidaiqun/</id>
+  <id>https://weidaiqun.github.io/</id>
   
   <author>
     <name>魏代群</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/weidaiqun/2021/03/03/hello-world/"/>
-    <id>https://github.com/weidaiqun/2021/03/03/hello-world/</id>
+    <link href="https://weidaiqun.github.io/2021/03/03/hello-world/"/>
+    <id>https://weidaiqun.github.io/2021/03/03/hello-world/</id>
     <published>2021-03-03T07:48:00.000Z</published>
     <updated>2021-03-04T03:56:51.217Z</updated>
     
