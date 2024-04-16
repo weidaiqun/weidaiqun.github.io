@@ -15,6 +15,7 @@ $(function () { // 获取记录数据
                 herfbeginhtml='<a href=\''+url+'\' target="_blank">';  
                 hrefendhtml='</a>';
               }
+             
                 var html = '<div class="c-app-item app" draggable="true">' +
                     '<div class="c-app-item-container">' +
                     ' <div class="c-app-item-cover">' +
@@ -87,6 +88,7 @@ $(function () { // 获取记录数据
                 var url="#";
                 var herfbeginhtml="";
                 var hrefendhtml="";
+               
                 if(e.url!=""){
                   url=e.url;
                   herfbeginhtml='<a href=\''+url+'\' target="_blank">';  

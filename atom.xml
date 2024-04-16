@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>魏代群</title>
+  <title>weidaiqun</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://weidaiqun.github.io/"/>
-  <updated>2023-03-21T07:26:52.859Z</updated>
-  <id>https://weidaiqun.github.io/</id>
+  <link href="https://github.com/weidaiqun/"/>
+  <updated>2024-03-30T01:20:13.021Z</updated>
+  <id>https://github.com/weidaiqun/</id>
   
   <author>
     <name>weidaiqun</name>
@@ -17,25 +17,374 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>1</title>
-    <link href="https://weidaiqun.github.io/posts/83dcefb7/"/>
-    <id>https://weidaiqun.github.io/posts/83dcefb7/</id>
-    <published>2023-03-21T07:22:36.263Z</published>
-    <updated>2023-03-21T07:26:52.859Z</updated>
+    <title>efcore</title>
+    <link href="https://github.com/weidaiqun/posts/b540e7f4/"/>
+    <id>https://github.com/weidaiqun/posts/b540e7f4/</id>
+    <published>2023-08-23T02:29:18.499Z</published>
+    <updated>2024-03-30T01:20:13.021Z</updated>
     
-    <content type="html"><![CDATA[<p>1111111111</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.cnblogs.com/laozhang-is-phi/p/10205495.html">https://www.cnblogs.com/laozhang-is-phi/p/10205495.html</a></p><p>把代码导入到 dotnet 模板里。</p><p>安装</p><p>dotnet new -i E:\qunnercore\FurionApiSTemplate-net6</p><p>卸载：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet new -u E:\qunnercore\FurionApiSTemplate-net6</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1111111111&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/laozhang-is-phi/p/10205495.html&quot;&gt;https://www.cnblogs.com/laozhang-is-phi/p/10205495.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;把代码导
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>生成充值卡类</title>
+    <link href="https://github.com/weidaiqun/posts/b6b424c4/"/>
+    <id>https://github.com/weidaiqun/posts/b6b424c4/</id>
+    <published>2023-05-31T06:56:00.658Z</published>
+    <updated>2023-05-31T07:52:17.547Z</updated>
+    
+    <content type="html"><![CDATA[<p>生成充值卡类</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using Yitter.IdGenerator;</span><br><span class="line">namespace xx.Common</span><br><span class="line">&#123;</span><br><span class="line">    public static class HelpNewId</span><br><span class="line">    &#123;</span><br><span class="line">      </span><br><span class="line">        &#x2F;&#x2F; WorkerIdBitLength，机器码位长，决定 WorkerId 的最大值，默认值6，取值范围[1, 19]，实际上有些语言采用 无符号 ushort (uint16) 类型接收该参数，所以最大值是16，如果是采用 有符号 short (int16)，则最大值为15。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;WorkerId，机器码，最重要参数，无默认值，必须 全局唯一（或相同 DataCenterId 内唯一），必须 程序设定，缺省条件（WorkerIdBitLength取默认值）时最大值63，理论最大值 2^WorkerIdBitLength-1（不同实现语言可能会限定在 65535 或 32767，原理同 WorkerIdBitLength 规则）。不同机器或不同应用实例 不能相同，你可通过应用程序配置该值，也可通过调用外部服务获取值。针对自动注册WorkerId需求，本算法提供默认实现：通过 redis 自动注册 WorkerId 的动态库，详见“Tools\AutoRegisterWorkerId”。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;特别提示：如果一台服务器部署多个独立服务，需要为每个服务指定不同的 WorkerId。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;SeqBitLength，序列数位长，默认值6，取值范围[3, 21]（建议不小于4），决定每毫秒基础生成的ID个数。如果每秒请求数不超过5W，保持默认值6即可；如果超过5W，不超过50W，建议赋值10或更大，以此类推。规则要求：WorkerIdBitLength + SeqBitLength 不超过 22。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;MinSeqNumber，最小序列数，默认值5，取值范围[5, MaxSeqNumber]，每毫秒的前5个序列数对应编号0-4是保留位，其中1-4是时间回拨相应预留位，0是手工新值预留位。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;MaxSeqNumber，最大序列数，设置范围[MinSeqNumber, 2 ^ SeqBitLength - 1]，默认值0，真实最大序列数取最大值（2^SeqBitLength-1），不为0时，取其为真实最大序列数，一般无需设置，除非多机共享WorkerId分段生成ID（此时还要正确设置最小序列数）。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;BaseTime，基础时间（也称：基点时间、原点时间、纪元时间），有默认值（2020年），是毫秒时间戳（是整数，.NET是DatetTime类型），作用是：用生成ID时的系统时间与基础时间的差值（毫秒数）作为生成ID的时间戳。基础时间一般无需设置，如果觉得默认值太老，你可以重新设置，不过要注意，这个值以后最好不变。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;第二版计划增加参数：</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; DataCenterId，数据中心ID（机房ID，默认0），请确保全局唯一。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;DataCenterIdBitLength，数据中心ID长度（默认0）。</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;TimestampType，时间戳类型（0-毫秒，1-秒），默认0。</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">        public static void SetArgs(ushort workerId &#x3D; 1, byte bitLength &#x3D; 6)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F; 创建 IdGeneratorOptions 对象，请在构造函数中输入 WorkerId：</span><br><span class="line">            var options &#x3D; new IdGeneratorOptions(workerId);</span><br><span class="line">            options.WorkerIdBitLength &#x3D; bitLength; &#x2F;&#x2F; WorkerIdBitLength 默认值6，支持的 WorkerId 最大值为2^6-1，若 WorkerId 超过64，可设置更大的 WorkerIdBitLength</span><br><span class="line">                                                   &#x2F;&#x2F; ...... 其它参数设置参考 IdGeneratorOptions 定义，一般来说，只要再设置 WorkerIdBitLength （决定 WorkerId 的最大值）。</span><br><span class="line">                                                   &#x2F;&#x2F; 保存参数（必须的操作，否则以上设置都不能生效）：</span><br><span class="line">            YitIdHelper.SetIdGenerator(options);</span><br><span class="line">            &#x2F;&#x2F; 以上初始化过程只需全局一次，且必须在第2步之前设置。</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static string GetCardNo()</span><br><span class="line">        &#123;</span><br><span class="line">            var newId &#x3D; YitIdHelper.NextId();</span><br><span class="line">            return newId.ToString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生成充值卡类&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>生成订单编号</title>
+    <link href="https://github.com/weidaiqun/posts/ea4eca76/"/>
+    <id>https://github.com/weidaiqun/posts/ea4eca76/</id>
+    <published>2023-05-31T06:53:02.444Z</published>
+    <updated>2023-05-31T07:43:55.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>生成订单编号  编码规则：（16进制，从DateTime.MinValue起到此时的）总天数 + 今天的总秒数 + 当前秒内产生的订单序号，其中今天的订单序号每秒清零。</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace xx.Common</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; 生成订单号类</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">    public class OrderForm</span><br><span class="line">    &#123;</span><br><span class="line">        private static long np1 &#x3D; 0, np2 &#x3D; 0, np3 &#x3D; 1; &#x2F;&#x2F;临时计算用。</span><br><span class="line">        private static object orderFormNumberLock &#x3D; new object();&#x2F;&#x2F;线程并行锁，以保证同一时间点只有一个用户能够操作流水号。如果分多个流水号段，放多个锁，并行压力可以更好的解决，大家自己想法子扩充吧</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 初始化订单号码</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 编码规则：（16进制，从DateTime.MinValue起到此时的）总天数 + 今天的总秒数 + 当前秒内产生的订单序号，其中今天的订单序号每秒清零。</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 该方法线程安全。</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        public static string CreateOrderNumber()</span><br><span class="line">        &#123;</span><br><span class="line">            DateTime now &#x3D; DateTime.Now;</span><br><span class="line">            TimeSpan span &#x3D; now - DateTime.MinValue;</span><br><span class="line">            long tmpDays &#x3D; span.Days;</span><br><span class="line">            long seconds &#x3D; span.Hours * 3600 + span.Minutes * 60 + span.Seconds;</span><br><span class="line">            StringBuilder sb &#x3D; new StringBuilder();</span><br><span class="line">            Monitor.Enter(orderFormNumberLock); &#x2F;&#x2F;锁定资源</span><br><span class="line">            if (tmpDays !&#x3D; np1)</span><br><span class="line">            &#123;</span><br><span class="line">                np1 &#x3D; tmpDays;</span><br><span class="line">                np2 &#x3D; 0;</span><br><span class="line">                np3 &#x3D; 1;</span><br><span class="line">            &#125;</span><br><span class="line">            if (np2 !&#x3D; seconds)</span><br><span class="line">            &#123;</span><br><span class="line">                np2 &#x3D; seconds;</span><br><span class="line">                np3 &#x3D; 1;</span><br><span class="line">            &#125;</span><br><span class="line">            sb.Append(Convert.ToString(np1, 10).PadLeft(6, &#39;0&#39;) + Convert.ToString(np2, 10).PadLeft(5, &#39;0&#39;) + Convert.ToString(np3++, 10));</span><br><span class="line">            Monitor.Exit(orderFormNumberLock); &#x2F;&#x2F;释放资源</span><br><span class="line">            return sb.ToString();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 获取订单号表示的日期</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 即：反向获取订单号的日期</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        public static DateTime GetDateTimeFromOrderNumber(string orderNumber)</span><br><span class="line">        &#123;</span><br><span class="line">            if (!string.IsNullOrEmpty(orderNumber))</span><br><span class="line">            &#123;</span><br><span class="line">                return DateTime.MinValue.AddDays(Convert.ToInt64(orderNumber.Substring(0, 6), 10)).AddSeconds(Convert.ToInt64(orderNumber.Substring(6, 5), 10));</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                return DateTime.MinValue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;**</span><br><span class="line">        * 根据当前系统时间加随机序列来生成订单号</span><br><span class="line">        * @return 订单号</span><br><span class="line">        *&#x2F;</span><br><span class="line">        public static string GenerateOutTradeNo()</span><br><span class="line">        &#123;</span><br><span class="line">            var ran &#x3D; new Random(Guid.NewGuid().GetHashCode());</span><br><span class="line">            var businessId &#x3D; Configs.GetValue(&quot;BusinessID&quot;);</span><br><span class="line">            string tradeNo;</span><br><span class="line">            lock (orderFormNumberLock)</span><br><span class="line">            &#123;</span><br><span class="line">                tradeNo &#x3D; string.Format(&quot;&#123;0&#125;&#123;1&#125;&#123;2&#125;&quot;, businessId, DateTime.Now.ToString(&quot;yyyyMMddHHmmssfff&quot;), ran.Next(999));</span><br><span class="line">            &#125;</span><br><span class="line">            return tradeNo;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        public static string GenerateOutTradeNo(string prefix, int length &#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            var ran &#x3D; new Random(Guid.NewGuid().GetHashCode());</span><br><span class="line">            string tradeNo;</span><br><span class="line">            lock (orderFormNumberLock)</span><br><span class="line">            &#123;</span><br><span class="line">                tradeNo &#x3D; $&quot;&#123;prefix&#125;&#123;DateTime.Now.ToString(&quot;yyyyMMddHHmmssfff&quot;)&#125;&quot;;</span><br><span class="line">                if (length &gt; 0)</span><br><span class="line">                &#123;</span><br><span class="line">                    var c &#x3D; length - prefix.Length - 17;</span><br><span class="line">                    if (c &gt; 0)</span><br><span class="line">                    &#123;</span><br><span class="line">                        var maxStr &#x3D; &quot;&quot;.PadLeft(c, &#39;9&#39;);</span><br><span class="line">                        int.TryParse(maxStr, out int max);</span><br><span class="line">                        var ranStr &#x3D; $&quot;&#123;ran.Next(max)&#125;&quot;.PadLeft(c, &#39;0&#39;);</span><br><span class="line">                        tradeNo &#x3D; $&quot;&#123;tradeNo&#125;&#123;ranStr&#125;&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        tradeNo &#x3D; tradeNo.Substring(0, length);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return tradeNo;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 6位兑换码生成规则 时间戳+上架ID+数量循环的值 生成MD5后取前6位</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;CodeID&quot;&gt;编码数量循环&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;StockProductID&quot;&gt;上架产品ID&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;returns&gt;&lt;&#x2F;returns&gt;</span><br><span class="line">        public static string CreatExChangeCode(int StockProductID, int CodeID)</span><br><span class="line">        &#123;</span><br><span class="line">            string basic &#x3D; DateTime.Now.ToString(&quot;yyyyMMddHHmmssfff&quot;) + StockProductID.ToString() + CodeID.ToString();</span><br><span class="line">            string md5 &#x3D; Md5Encrypt.md5(basic);</span><br><span class="line">            string result &#x3D; System.Text.RegularExpressions.Regex.Replace(md5, @&quot;[^0-9]+&quot;, &quot;&quot;);</span><br><span class="line">            if (result.Length &gt;&#x3D; 6)</span><br><span class="line">            &#123;</span><br><span class="line">                result &#x3D; result.Substring(result.Length - 6, 6);</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                var number &#x3D; 6 - result.Length;</span><br><span class="line">                var maxStr &#x3D; &quot;&quot;.PadLeft(number, &#39;6&#39;);</span><br><span class="line">                int.TryParse(maxStr, out int max);</span><br><span class="line">                var ran &#x3D; new Random(Guid.NewGuid().GetHashCode());</span><br><span class="line">                var ranStr &#x3D; $&quot;&#123;ran.Next(max)&#125;&quot;.PadLeft(number, &#39;0&#39;);</span><br><span class="line">                result &#x3D; $&quot;&#123;result&#125;&#123;ranStr&#125;&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生成订单编号  编码规则：（16进制，从DateTime.MinValue起到此时的）总天数 + 今天的总秒数 + 当前秒内产生的订单序号，其中今天的订单序号每秒清零。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>公共类生成六位推广码</title>
+    <link href="https://github.com/weidaiqun/posts/d99ce4d5/"/>
+    <id>https://github.com/weidaiqun/posts/d99ce4d5/</id>
+    <published>2023-05-31T06:51:07.167Z</published>
+    <updated>2023-05-31T07:44:01.081Z</updated>
+    
+    <content type="html"><![CDATA[<p>生成六位推广码  根据用户ID生成专属推广码</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace xx.Common</span><br><span class="line">&#123;</span><br><span class="line">    public class ShareCodeHelper</span><br><span class="line">    &#123;</span><br><span class="line">        #region  生成六位推广码</span><br><span class="line">        private static string source_string &#x3D; &quot;2YU9P6ASDFG8QWERTHJ7KLZX4CV5B3ONM&quot;;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt; 根据用户ID生成专属推广码</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;Id&quot;&gt;UserID&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;returns&gt;用户六位推广码&lt;&#x2F;returns&gt;</span><br><span class="line">        public static string CreateCode(int Id)</span><br><span class="line">        &#123;</span><br><span class="line">            string code &#x3D; &quot;&quot;;</span><br><span class="line">            int mod &#x3D; 0;</span><br><span class="line">            StringBuilder sb &#x3D; new StringBuilder();</span><br><span class="line">            while (Id &gt; 0)</span><br><span class="line">            &#123;</span><br><span class="line">                mod &#x3D; Id % source_string.Length;</span><br><span class="line">                Id &#x3D; (Id - mod) &#x2F; source_string.Length;</span><br><span class="line">                code &#x3D; source_string.ToCharArray()[mod] + code;</span><br><span class="line">            &#125;</span><br><span class="line">            return code.PadRight(6, &#39;0&#39;);&#x2F;&#x2F;不足六位补0</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;通过推广码反编译出来用户ID</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;code&quot;&gt;专属推广码&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;returns&gt;UserID&lt;&#x2F;returns&gt;</span><br><span class="line">        public static int CodeToId(string code)</span><br><span class="line">        &#123;</span><br><span class="line">            code &#x3D; new string((from s in code where s !&#x3D; &#39;0&#39; select s).ToArray());</span><br><span class="line">            int num &#x3D; 0;</span><br><span class="line">            for (int i &#x3D; 0; i &lt; code.ToCharArray().Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                for (int j &#x3D; 0; j &lt; source_string.ToCharArray().Length; j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    if (code.ToCharArray()[i] &#x3D;&#x3D; source_string.ToCharArray()[j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        num +&#x3D; j * Convert.ToInt32(Math.Pow(source_string.Length, code.ToCharArray().Length - i - 1));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return num;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生成六位推广码  根据用户ID生成专属推广码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>quartzjob使用</title>
+    <link href="https://github.com/weidaiqun/posts/2f8d7ae6/"/>
+    <id>https://github.com/weidaiqun/posts/2f8d7ae6/</id>
+    <published>2023-05-31T06:38:11.000Z</published>
+    <updated>2023-05-31T07:44:19.060Z</updated>
+    
+    <content type="html"><![CDATA[<p>QuartzJob </p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using Quartz;</span><br><span class="line"></span><br><span class="line">namespace xx.QuartzJob.Jobs</span><br><span class="line">&#123;</span><br><span class="line">    public interface ISampleJob : IJob, IDisposable</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public class SampleJob : ISampleJob</span><br><span class="line">    &#123;</span><br><span class="line">        public void Dispose()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;disposing...&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     Called by the &lt;see cref&#x3D;&quot;T:Quartz.IScheduler&quot; &#x2F;&gt; when a &lt;see cref&#x3D;&quot;T:Quartz.ITrigger&quot; &#x2F;&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     fires that is associated with the &lt;see cref&#x3D;&quot;T:Quartz.IJob&quot; &#x2F;&gt;.</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;context&quot;&gt;The execution context.&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;returns&gt;&lt;&#x2F;returns&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;remarks&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     The implementation may wish to set a  result object on the</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     JobExecutionContext before this method exits.  The result itself</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     is meaningless to Quartz, but may be informative to</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     &lt;see cref&#x3D;&quot;T:Quartz.IJobListener&quot; &#x2F;&gt;s or</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     &lt;see cref&#x3D;&quot;T:Quartz.ITriggerListener&quot; &#x2F;&gt;s that are watching the job&#39;s</span><br><span class="line">        &#x2F;&#x2F;&#x2F;     execution.</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;remarks&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;inheritdoc &#x2F;&gt;</span><br><span class="line">        public async Task Execute(IJobExecutionContext context)</span><br><span class="line">        &#123;</span><br><span class="line">            await Task.Run(() &#x3D;&gt; &#123; Console.WriteLine(&quot;Hello world!&quot;); &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>QuartzJobServer</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;job&gt;</span><br><span class="line">      &lt;name&gt;MemberReservedJob&lt;&#x2F;name&gt;</span><br><span class="line">      &lt;job-type&gt;xx.QuartzJob.Jobs.MemberReservedJob, xx.QuartzJob&lt;&#x2F;job-type&gt;</span><br><span class="line">      &lt;durable&gt;true&lt;&#x2F;durable&gt;</span><br><span class="line">      &lt;recover&gt;true&lt;&#x2F;recover&gt;</span><br><span class="line">    &lt;&#x2F;job&gt;</span><br><span class="line">    &lt;trigger&gt;</span><br><span class="line">      &lt;cron&gt;</span><br><span class="line">        &lt;name&gt;MemberReservedJobCron&lt;&#x2F;name&gt;</span><br><span class="line">        &lt;job-name&gt;MemberReservedJob&lt;&#x2F;job-name&gt;</span><br><span class="line">        &lt;cron-expression&gt;0 1&#x2F;1 * * * ?&lt;&#x2F;cron-expression&gt;</span><br><span class="line">      &lt;&#x2F;cron&gt;</span><br><span class="line">    &lt;&#x2F;trigger&gt;</span><br></pre></td></tr></table></figure><p>service_start.bat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">net stop xx.QuartzService</span><br><span class="line">sc delete xx.QuartzService</span><br><span class="line">E:\xx\xx\xx.QuartzService\bin\Debug\xx.QuartzService.exe install</span><br><span class="line">net start xx.QuartzService</span><br><span class="line">TIMEOUT &#x2F;T -1</span><br></pre></td></tr></table></figure><p>service_stop.bat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">net stop xx.QuartzService</span><br><span class="line">sc delete xx.QuartzService</span><br><span class="line">TIMEOUT &#x2F;T -1</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;QuartzJob &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+      <category term="Quartzjob" scheme="https://github.com/weidaiqun/tags/Quartzjob/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EF延时加载</title>
+    <link href="https://github.com/weidaiqun/posts/c4957189/"/>
+    <id>https://github.com/weidaiqun/posts/c4957189/</id>
+    <published>2023-05-29T07:34:10.000Z</published>
+    <updated>2023-05-30T08:49:51.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>ef延时加载问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[HttpGet]</span><br><span class="line"> public Result&lt;Ag_MemberOrder&gt; GetAg_MemberOrder(int Id)</span><br><span class="line"> &#123;</span><br><span class="line">     var result &#x3D; new Result&lt;Ag_MemberOrder&gt;();</span><br><span class="line">     var model &#x3D; db.Ag_MemberOrder.Where(a &#x3D;&gt; a.Id &#x3D;&#x3D; Id).FirstOrDefault();</span><br><span class="line">     result.Data &#x3D; model;</span><br><span class="line">     result.Message &#x3D; &quot;获取成功&quot;;</span><br><span class="line">     return result;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p>获取不到数据，是因为多表关联延时加载报错导致~</p><p> this.Configuration.LazyLoadingEnabled = false;</p><a id="more"></a><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>优点：用到的时候才加载，没用到的时候才加载，因此避免了一次性加载所有数据，提高了加载的速度<br>缺点：延迟加载的功能虽然比较方便，但是它会多次查询数据库，增加了数据库的压力，<br>因此：如果关联的导航属性值几乎都要读取到，那么就不要用延迟加载；如果关联的属性只有较小的概率（比如年龄大于7岁的学生显示班级名字，否则就不显示）则可以启用延迟加载。这个概率到底是多少是没有一个固定的值，和数据、业务、技术架构的特点都有关系，这是需要经验和直觉，也需要测试和平衡的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ef延时加载问题&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[HttpGet]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; public Result&amp;lt;Ag_MemberOrder&amp;gt; GetAg_MemberOrder(int Id)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     var result &amp;#x3D; new Result&amp;lt;Ag_MemberOrder&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     var model &amp;#x3D; db.Ag_MemberOrder.Where(a &amp;#x3D;&amp;gt; a.Id &amp;#x3D;&amp;#x3D; Id).FirstOrDefault();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     result.Data &amp;#x3D; model;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     result.Message &amp;#x3D; &amp;quot;获取成功&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     return result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;获取不到数据，是因为多表关联延时加载报错导致~&lt;/p&gt;
+&lt;p&gt; this.Configuration.LazyLoadingEnabled = false;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="vs" scheme="https://github.com/weidaiqun/tags/vs/"/>
+    
+      <category term="EF" scheme="https://github.com/weidaiqun/tags/EF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常用命令</title>
+    <link href="https://github.com/weidaiqun/posts/535bcd6d/"/>
+    <id>https://github.com/weidaiqun/posts/535bcd6d/</id>
+    <published>2023-05-06T05:39:12.000Z</published>
+    <updated>2023-05-31T08:40:17.600Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s     </p><h3 id="（1）hexo-g或hexo-generate"><a href="#（1）hexo-g或hexo-generate" class="headerlink" title="（1）hexo g或hexo generate"></a>（1）hexo g或hexo generate</h3><ul><li>生成public文件夹</li></ul><h3 id="（2）hexo-clean"><a href="#（2）hexo-clean" class="headerlink" title="（2）hexo clean"></a>（2）hexo clean</h3><ul><li>public文件夹删除</li></ul><h3 id="（3）hexo-s或hexo-server"><a href="#（3）hexo-s或hexo-server" class="headerlink" title="（3）hexo s或hexo server"></a>（3）hexo s或hexo server</h3><ul><li>启动服务，默认地址为<a href="http://localhost:4000/，4000端口">http://localhost:4000/，4000端口</a></li></ul><h3 id="（4）hexo-d或hexo-deploy"><a href="#（4）hexo-d或hexo-deploy" class="headerlink" title="（4）hexo d或hexo deploy"></a>（4）hexo d或hexo deploy</h3><ul><li>部署站点，在本地生成.deploy_git文件夹，并将编译后的文件上传至 GitHub。</li></ul><h3 id="（5）hexo-new-layout"><a href="#（5）hexo-new-layout" class="headerlink" title="（5）hexo new [layout] "></a>（5）hexo new [layout] <title></title></h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s     &lt;/p&gt;
+&lt;h3 id=&quot;（1）hexo-g或hexo-generate&quot;&gt;&lt;a href=&quot;#（1）hexo-g或hexo-generate&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://github.com/weidaiqun/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://github.com/weidaiqun/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Exceptionless日志使用</title>
+    <link href="https://github.com/weidaiqun/posts/8351ccc/"/>
+    <id>https://github.com/weidaiqun/posts/8351ccc/</id>
+    <published>2023-05-06T01:22:24.000Z</published>
+    <updated>2023-05-31T07:47:47.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>Exceptionless是一个开源的实时的日志收集框架，它可以应用在基于 ASP.NET，ASP.NET Core，Web API，Web Forms，WPF，Console，ASP.NET MVC 等技术开发的应用程序中</p><a id="more"></a><p>项目地址：<a href="https://github.com/exceptionless/Exceptionless">https://github.com/exceptionless/Exceptionless</a></p><p>参考文章：</p><p>（1）<a href="https://www.cnblogs.com/yilezhu/p/9193723.html"> asp.Net Core免费开源分布式异常日志收集框架Exceptionless安装配置以及简单使用图文教程</a>  </p><p>（2）<a href="https://www.cnblogs.com/yilezhu/p/9193723.html">https://www.cnblogs.com/yilezhu/p/9193723.html</a></p><p><img src="/weidaiqun/posts/8351ccc/ex1.png" alt="Exceptionless"><br><img src="/weidaiqun/posts/8351ccc/ex2.png" alt="Exceptionless"><br><img src="/weidaiqun/posts/8351ccc/ex3.png" alt="Exceptionless"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Exceptionless是一个开源的实时的日志收集框架，它可以应用在基于 ASP.NET，ASP.NET Core，Web API，Web Forms，WPF，Console，ASP.NET MVC 等技术开发的应用程序中&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+      <category term="Exceptionless" scheme="https://github.com/weidaiqun/tags/Exceptionless/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>quartzjob不能并发执行同一个Job</title>
+    <link href="https://github.com/weidaiqun/posts/be0bf06b/"/>
+    <id>https://github.com/weidaiqun/posts/be0bf06b/</id>
+    <published>2023-05-06T01:04:17.000Z</published>
+    <updated>2023-05-31T08:40:34.641Z</updated>
+    
+    <content type="html"><![CDATA[<p> @DisallowConcurrentExecution:禁止并发执行多个相同定义的JobDetail, 这个注解是加在Job类上的, 但意思并不是不能同时执行多个Job,而是不能并发执行同一个Job Definition(由JobDetail定义), 但是可以同时执行多个不同的JobDetail。</p><p>  使用： [DisallowConcurrentExecution]</p><a id="more"></a><p><img src="/weidaiqun/posts/be0bf06b/q1.png" alt="DisallowConcurrentExecution"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; @DisallowConcurrentExecution:禁止并发执行多个相同定义的JobDetail, 这个注解是加在Job类上的, 但意思并不是不能同时执行多个Job,而是不能并发执行同一个Job Definition(由JobDetail定义), 但是可以同时执行多个不同的JobDetail。&lt;/p&gt;
+&lt;p&gt;  使用： [DisallowConcurrentExecution]&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+      <category term="quartzjob" scheme="https://github.com/weidaiqun/tags/quartzjob/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信QQ防撤回</title>
+    <link href="https://github.com/weidaiqun/posts/9649d71a/"/>
+    <id>https://github.com/weidaiqun/posts/9649d71a/</id>
+    <published>2023-05-05T08:41:21.227Z</published>
+    <updated>2023-05-05T08:45:15.286Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://pan.baidu.com/share/init?surl=ka3L38hkzoQmdmV9rgVTaA">提取码：ejwn</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/share/init?surl=ka3L38hkzoQmdmV9rgVTaA&quot;&gt;提取码：ejwn&lt;/a&gt;&lt;/p&gt;
 
       
     
     </summary>
     
     
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/categories/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/tags/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VS显示html预览</title>
+    <link href="https://github.com/weidaiqun/posts/503970b4/"/>
+    <id>https://github.com/weidaiqun/posts/503970b4/</id>
+    <published>2023-05-05T08:37:50.704Z</published>
+    <updated>2023-05-31T07:46:04.788Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开：工具–&gt;选项–》文本编辑器–》文件扩展名  扩展名html，编辑器选择web窗体</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打开：工具–&amp;gt;选项–》文本编辑器–》文件扩展名  扩展名html，编辑器选择web窗体&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/categories/VS/"/>
+    
+    
+      <category term="VS" scheme="https://github.com/weidaiqun/tags/VS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>音频管理器Realtek驱动</title>
+    <link href="https://github.com/weidaiqun/posts/558b3ea2/"/>
+    <id>https://github.com/weidaiqun/posts/558b3ea2/</id>
+    <published>2023-04-27T07:16:21.000Z</published>
+    <updated>2023-05-05T08:45:16.748Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://pan.baidu.com/share/init?surl=_Aw-dr8PlDSL1_yvIQEeIw">音频管理器Realtek驱动,提取码:9tv2</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/share/init?surl=_Aw-dr8PlDSL1_yvIQEeIw&quot;&gt;音频管理器Realtek驱动,提取码:9tv2&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/categories/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/tags/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑时间不正确问题</title>
+    <link href="https://github.com/weidaiqun/posts/9a41a0d6/"/>
+    <id>https://github.com/weidaiqun/posts/9a41a0d6/</id>
+    <published>2023-04-27T02:24:58.000Z</published>
+    <updated>2023-05-31T07:44:10.404Z</updated>
+    
+    <content type="html"><![CDATA[<p>突然发现电脑时间总是忙个1分钟，查了查是自动同步时间报错了</p><a id="more"></a><p><img src="/weidaiqun/posts/9a41a0d6/1.png" alt="11"></p><p>改个时间服务器同步地址：cn.ntp.org.cn               cn.ntp.org.cn   或者看一下你同事的</p><p><img src="/weidaiqun/posts/9a41a0d6/2.png" alt="22"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;突然发现电脑时间总是忙个1分钟，查了查是自动同步时间报错了&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/categories/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="电脑相关" scheme="https://github.com/weidaiqun/tags/%E7%94%B5%E8%84%91%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-asset-image问题</title>
+    <link href="https://github.com/weidaiqun/posts/f400b04c/"/>
+    <id>https://github.com/weidaiqun/posts/f400b04c/</id>
+    <published>2023-04-26T01:58:00.000Z</published>
+    <updated>2023-05-05T09:04:00.675Z</updated>
+    
+    <content type="html"><![CDATA[<p>abbrlink+hexo-asset-image问题，导致文章图片不显示问题</p><a id="more"></a><h3 id="hexo-asset-imag的安装："><a href="#hexo-asset-imag的安装：" class="headerlink" title="hexo-asset-imag的安装："></a>hexo-asset-imag的安装：</h3><p>npm install <a href="https://github.com/CodeFalling/hexo-asset-image">https://github.com/CodeFalling/hexo-asset-image</a> –save</p><h3 id="config-yml配置："><a href="#config-yml配置：" class="headerlink" title="_config.yml配置："></a>_config.yml配置：</h3><p>//只开启这个就够<br>post_asset_folder: true</p><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>hexo new postname</p><h3 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h3><p>hexo new page “test”</p><p>发现新建page页面的图片不显示，</p><p>解决方法：将图片考到主题下的source下 生成解决了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;abbrlink+hexo-asset-image问题，导致文章图片不显示问题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://github.com/weidaiqun/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://github.com/weidaiqun/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>激活码</title>
+    <link href="https://github.com/weidaiqun/posts/83dcefb7/"/>
+    <id>https://github.com/weidaiqun/posts/83dcefb7/</id>
+    <published>2023-03-21T07:22:00.000Z</published>
+    <updated>2023-05-05T09:10:52.423Z</updated>
+    
+    <content type="html"><![CDATA[<p>各种软件系统激活码，具体点击查看</p><a id="more"></a><h4 id="XP"><a href="#XP" class="headerlink" title="XP"></a>XP</h4><p> CM3HY-26VYW-6JRYC-X66GX-JVY2D</p><h4 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h4><p>vs2012   YKCW6-BPFPF-BT8C9-7DCTH-QXGWC  / YCFHQ-9DWCY-DKV88-T2TMH-G7BHP</p><p>vs2010    YCFHQ-9DWCY-DKV88-T2TMH-G7BHP </p><p>VS2022激活码：</p><p>Professional</p><p>TD244-P4NB7-YQ6XK-Y8MMM-YWV2J</p><p>Enterprise:</p><p>VHF9H-NXBBB-638P6-6JHCY-88JWH</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;各种软件系统激活码，具体点击查看&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="激活密钥" scheme="https://github.com/weidaiqun/categories/%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/"/>
+    
+    
+      <category term="激活码" scheme="https://github.com/weidaiqun/tags/%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
+    
+      <category term="激活密钥" scheme="https://github.com/weidaiqun/tags/%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/"/>
     
   </entry>
   
